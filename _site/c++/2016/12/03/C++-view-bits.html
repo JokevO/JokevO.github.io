@@ -31,11 +31,11 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Blender script: How to change the object data name to the object name</h1>
+            <h1 class="post-title">C++: view bit pattern</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-08-15">15 Aug 2016</time>
+                <time class="post-date" datetime="2016-12-03">03 Dec 2016</time>
                 
-                    on blender
+                    on c++
                 
             </section>
         </header>
@@ -49,30 +49,39 @@
         </header> -->
 
         <!-- <span class="post-meta">
-            <time datetime="2016-08-15">15 Aug 2016</time>
+            <time datetime="2016-12-03">03 Dec 2016</time>
             
-                on blender
+                on c++
             
         </span> -->
 
-        <!-- <h1 class="post-title">Blender script: How to change the object data name to the object name</h1> -->
+        <!-- <h1 class="post-title">C++: view bit pattern</h1> -->
 
         <section class="post-content">
-            <p>If you rename an object in blender, you likely didn’t change the name of the object data.
-There is a difference in the name of the object itself, and the name of the object data.
-When you rename one, the other isn’t automatically renamed.</p>
+            <p>I was working on a hardware project, and I needed to be able to send a lot of data with only 12 bytes. Therefore when I needed to puzzle some bytes together, I opened up an <a href="http://codepad.org/">online c++ compiler</a> and got to testing quickly.
+In C++ you can import a library called <code class="highlighter-rouge">bitset</code>. It is useful when you want to print out your bitpattern and see the result when you are shifting bits. Here is an example:</p>
 
-<p>When you export your object to a <code class="highlighter-rouge">.obj</code> and the object has different names, it will put these names together during export. For instance, your object is named <code class="highlighter-rouge">Floor</code>, and the object data name is <code class="highlighter-rouge">Plane</code>.
-When the object is exported, the mesh will have the name <code class="highlighter-rouge">FloorPlane</code>. If both names are equal, it will not duplicate the names. For example; the object name and data name are both <code class="highlighter-rouge">Floor</code>, the exported name will be <code class="highlighter-rouge">Floor</code></p>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
+#include &lt;bitset&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<p>Since I don’t want to manually go over every object, I use this very small script that will change all the names to match the object name:</p>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">uint8_t</span> <span class="n">number1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kt">uint8_t</span> <span class="n">part</span> <span class="o">=</span> <span class="n">number1</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">number2</span> <span class="o">=</span> <span class="mi">35981</span><span class="p">;</span>
+  
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">(</span><span class="n">number1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">(</span><span class="n">part</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">(</span><span class="n">number2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bpy</span>
+<p>This will output:</p>
 
-<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span> <span class="c">#1</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="c">#2</span></code></pre></figure>
-
-<p>This will loop over all the objects <code class="highlighter-rouge">(1)</code> in the scene and rename the data name to the object name <code class="highlighter-rouge">(2)</code>.</p>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="mi">11111111</span>
+<span class="mo">00001111</span>
+<span class="mo">00000000000000001000110010001101</span></code></pre></figure>
 
         </section>
 
@@ -85,15 +94,15 @@ When the object is exported, the mesh will have the name <code class="highlighte
             <!-- Share links section -->
             <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Blender script: How to change the object data name to the object name&amp;url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=C++: view bit pattern&amp;url=http://jokevanoijen.be/c++/2016/12/03/C++-view-bits.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/c++/2016/12/03/C++-view-bits.html"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/c++/2016/12/03/C++-view-bits.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>

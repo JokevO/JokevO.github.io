@@ -31,11 +31,11 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Blender script: How to change the object data name to the object name</h1>
+            <h1 class="post-title">Tasker: automate your android phone</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-08-15">15 Aug 2016</time>
+                <time class="post-date" datetime="2017-04-17">17 Apr 2017</time>
                 
-                    on blender
+                    on tasker and android
                 
             </section>
         </header>
@@ -49,30 +49,52 @@
         </header> -->
 
         <!-- <span class="post-meta">
-            <time datetime="2016-08-15">15 Aug 2016</time>
+            <time datetime="2017-04-17">17 Apr 2017</time>
             
-                on blender
+                on tasker and android
             
         </span> -->
 
-        <!-- <h1 class="post-title">Blender script: How to change the object data name to the object name</h1> -->
+        <!-- <h1 class="post-title">Tasker: automate your android phone</h1> -->
 
         <section class="post-content">
-            <p>If you rename an object in blender, you likely didn’t change the name of the object data.
-There is a difference in the name of the object itself, and the name of the object data.
-When you rename one, the other isn’t automatically renamed.</p>
+            <p>If there is one app I can definitely recommend when having an android phone, it is <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a>. This app is not free, but well worth the money. When you have to do something on your phone manually over and over, you can just automate it using the app.
+It also does not use a lot of battery but will potentially save some.</p>
 
-<p>When you export your object to a <code class="highlighter-rouge">.obj</code> and the object has different names, it will put these names together during export. For instance, your object is named <code class="highlighter-rouge">Floor</code>, and the object data name is <code class="highlighter-rouge">Plane</code>.
-When the object is exported, the mesh will have the name <code class="highlighter-rouge">FloorPlane</code>. If both names are equal, it will not duplicate the names. For example; the object name and data name are both <code class="highlighter-rouge">Floor</code>, the exported name will be <code class="highlighter-rouge">Floor</code></p>
+<p>One of the most simple things I do to save on battery, is to turn off wifi when I leave home, and turn it back on when at work and vice verca. Also, when I step outside I might want to get into the car and connect with it over Bluetooth. I would have to enable bluetooth when leaving home or work.</p>
 
-<p>Since I don’t want to manually go over every object, I use this very small script that will change all the names to match the object name:</p>
+<p>Here is how I automated it using <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a>:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bpy</span>
+<p>I created a task that will turn on Wifi and turn off Bluetooth:</p>
+<ol>
+  <li>Open Tasker and in the tab <code class="highlighter-rouge">TASKS</code>, make a new task called <code class="highlighter-rouge">At Home/Work</code>.</li>
+  <li>In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>.</li>
+  <li>Press back button to confirm.</li>
+  <li>Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>.</li>
+  <li>Press back button again to confirm task.</li>
+</ol>
 
-<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span> <span class="c">#1</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="c">#2</span></code></pre></figure>
+<p>Then I created a task that will do the oposite:</p>
+<ol>
+  <li>Open Tasker and make a new task called <code class="highlighter-rouge">Leaving Home/Work</code>.</li>
+  <li>In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>.</li>
+  <li>Press back button to confirm.</li>
+  <li>Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>.</li>
+  <li>Press back button again to confirm task.</li>
+</ol>
 
-<p>This will loop over all the objects <code class="highlighter-rouge">(1)</code> in the scene and rename the data name to the object name <code class="highlighter-rouge">(2)</code>.</p>
+<p>Now we that we have the tasks ready, we just need to make them trigger at the right time.
+I will be using location.</p>
+
+<p>Trigger tasks:</p>
+<ol>
+  <li>Go to the tab <code class="highlighter-rouge">PROFILES</code> and add a new profile based on location.</li>
+  <li>Either fill in the right lat and lon, or longpress the map and it will put a marker there.
+Adjust the radius to 100m and whether or not you want to use gps or just net. I only use <code class="highlighter-rouge">Net</code>.</li>
+  <li>Link your <code class="highlighter-rouge">At Home/Work</code> task to the profile. You see it is linked with <code class="highlighter-rouge">-&gt;</code> icon in profile. This indicates that the task will be triggered when you enter the profile location.</li>
+  <li>Long press the task in profiles and select <code class="highlighter-rouge">Add Exit Task</code> and select the <code class="highlighter-rouge">Leaving Home/Work</code> task. You will see it linked with the <code class="highlighter-rouge">&lt;-</code> icon. This indicates the task that will be triggered when you exit that location.</li>
+</ol>
+
 
         </section>
 
@@ -85,15 +107,15 @@ When the object is exported, the mesh will have the name <code class="highlighte
             <!-- Share links section -->
             <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Blender script: How to change the object data name to the object name&amp;url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Tasker: automate your android phone&amp;url=http://jokevanoijen.be/tasker/android/2017/04/17/tasker-home-work.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/tasker/android/2017/04/17/tasker-home-work.html"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/tasker/android/2017/04/17/tasker-home-work.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>

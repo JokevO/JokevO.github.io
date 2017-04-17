@@ -3,11 +3,213 @@
   <channel>
     <title></title>
     <description>I like programming</description>
-    <link>jokevanoijen.be//</link>
-    <atom:link href="jokevanoijen.be//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Aug 2016 21:40:36 +0200</pubDate>
-    <lastBuildDate>Mon, 15 Aug 2016 21:40:36 +0200</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 17 Apr 2017 19:12:23 +0200</pubDate>
+    <lastBuildDate>Mon, 17 Apr 2017 19:12:23 +0200</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Tasker: launch app when you plug in headphones</title>
+        <description>&lt;p&gt;Another &lt;a href=&quot;https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&quot;&gt;Tasker&lt;/a&gt; post, I love how you can automate almost everything you usually have to do manually.
+This is a very easy task, but I find it very useful. When I am at work, I listen to &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.noisli.noisli&quot;&gt;Noisli&lt;/a&gt;.
+I find this helps me keep my focus, but you can also do this with &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.spotify.music&quot;&gt;Spotify&lt;/a&gt; or any other app.
+I listen to this on my phone, but when I have a meeting, I do take my phone with me.&lt;/p&gt;
+
+&lt;p&gt;Therefore I made a task that will launch &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.noisli.noisli&quot;&gt;Noisli&lt;/a&gt; when I plug in my headphones, and kill the app when I unplug them:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Go to the tab &lt;code class=&quot;highlighter-rouge&quot;&gt;TASKS&lt;/code&gt; and add a new one, called &lt;code class=&quot;highlighter-rouge&quot;&gt;Launch Noisli&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add an action &lt;code class=&quot;highlighter-rouge&quot;&gt;App -&amp;gt; Launch App&lt;/code&gt;, and select the app you want to open.&lt;/li&gt;
+  &lt;li&gt;Press back button to confirm.&lt;/li&gt;
+  &lt;li&gt;Add another task called &lt;code class=&quot;highlighter-rouge&quot;&gt;Kill Noisli&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add the action &lt;code class=&quot;highlighter-rouge&quot;&gt;App -&amp;gt; Kill App&lt;/code&gt;, and select the app you want to close when you unplug your headphones.&lt;/li&gt;
+  &lt;li&gt;In tab &lt;code class=&quot;highlighter-rouge&quot;&gt;PROFILES&lt;/code&gt;, add a new profile &lt;code class=&quot;highlighter-rouge&quot;&gt;State -&amp;gt; Hardware -&amp;gt; Headset Plugged&lt;/code&gt;. Press back button to confirm.&lt;/li&gt;
+  &lt;li&gt;Link task &lt;code class=&quot;highlighter-rouge&quot;&gt;Launch Noisli&lt;/code&gt;. This will launch the app when your headset is plugged in.&lt;/li&gt;
+  &lt;li&gt;Long press &lt;code class=&quot;highlighter-rouge&quot;&gt;Launch Noisli&lt;/code&gt; in the profile and press &lt;code class=&quot;highlighter-rouge&quot;&gt;Add Exit Task&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Link &lt;code class=&quot;highlighter-rouge&quot;&gt;Kill Noisli&lt;/code&gt; to the exit task and it will kill the app when you disconnect your headphones.&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 17 Apr 2017 11:18:00 +0200</pubDate>
+        <link>http://localhost:4000//tasker/android/2017/04/17/tasker-launch-app.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tasker/android/2017/04/17/tasker-launch-app.html</guid>
+        
+        
+        <category>tasker</category>
+        
+        <category>android</category>
+        
+      </item>
+    
+      <item>
+        <title>Tasker: automate your android phone</title>
+        <description>&lt;p&gt;If there is one app I can definitely recommend when having an android phone, it is &lt;a href=&quot;https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&quot;&gt;Tasker&lt;/a&gt;. This app is not free, but well worth the money. When you have to do something on your phone manually over and over, you can just automate it using the app.
+It also does not use a lot of battery but will potentially save some.&lt;/p&gt;
+
+&lt;p&gt;One of the most simple things I do to save on battery, is to turn off wifi when I leave home, and turn it back on when at work and vice verca. Also, when I step outside I might want to get into the car and connect with it over Bluetooth. I would have to enable bluetooth when leaving home or work.&lt;/p&gt;
+
+&lt;p&gt;Here is how I automated it using &lt;a href=&quot;https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&quot;&gt;Tasker&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;I created a task that will turn on Wifi and turn off Bluetooth:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Open Tasker and in the tab &lt;code class=&quot;highlighter-rouge&quot;&gt;TASKS&lt;/code&gt;, make a new task called &lt;code class=&quot;highlighter-rouge&quot;&gt;At Home/Work&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;In this task add an action &lt;code class=&quot;highlighter-rouge&quot;&gt;Net -&amp;gt; WiFi&lt;/code&gt;, and set &lt;code class=&quot;highlighter-rouge&quot;&gt;Set&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;on&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Press back button to confirm.&lt;/li&gt;
+  &lt;li&gt;Add a new action &lt;code class=&quot;highlighter-rouge&quot;&gt;Net -&amp;gt; Bluetooth&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Set&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;off&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Press back button again to confirm task.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Then I created a task that will do the oposite:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Open Tasker and make a new task called &lt;code class=&quot;highlighter-rouge&quot;&gt;Leaving Home/Work&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;In this task add an action &lt;code class=&quot;highlighter-rouge&quot;&gt;Net -&amp;gt; WiFi&lt;/code&gt;, and set &lt;code class=&quot;highlighter-rouge&quot;&gt;Set&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;off&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Press back button to confirm.&lt;/li&gt;
+  &lt;li&gt;Add a new action &lt;code class=&quot;highlighter-rouge&quot;&gt;Net -&amp;gt; Bluetooth&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;Set&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;on&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Press back button again to confirm task.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now we that we have the tasks ready, we just need to make them trigger at the right time.
+I will be using location.&lt;/p&gt;
+
+&lt;p&gt;Trigger tasks:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Go to the tab &lt;code class=&quot;highlighter-rouge&quot;&gt;PROFILES&lt;/code&gt; and add a new profile based on location.&lt;/li&gt;
+  &lt;li&gt;Either fill in the right lat and lon, or longpress the map and it will put a marker there.
+Adjust the radius to 100m and whether or not you want to use gps or just net. I only use &lt;code class=&quot;highlighter-rouge&quot;&gt;Net&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Link your &lt;code class=&quot;highlighter-rouge&quot;&gt;At Home/Work&lt;/code&gt; task to the profile. You see it is linked with &lt;code class=&quot;highlighter-rouge&quot;&gt;-&amp;gt;&lt;/code&gt; icon in profile. This indicates that the task will be triggered when you enter the profile location.&lt;/li&gt;
+  &lt;li&gt;Long press the task in profiles and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Add Exit Task&lt;/code&gt; and select the &lt;code class=&quot;highlighter-rouge&quot;&gt;Leaving Home/Work&lt;/code&gt; task. You will see it linked with the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;-&lt;/code&gt; icon. This indicates the task that will be triggered when you exit that location.&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 17 Apr 2017 08:18:00 +0200</pubDate>
+        <link>http://localhost:4000//tasker/android/2017/04/17/tasker-home-work.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tasker/android/2017/04/17/tasker-home-work.html</guid>
+        
+        
+        <category>tasker</category>
+        
+        <category>android</category>
+        
+      </item>
+    
+      <item>
+        <title>C++: view bit pattern</title>
+        <description>&lt;p&gt;I was working on a hardware project, and I needed to be able to send a lot of data with only 12 bytes. Therefore when I needed to puzzle some bytes together, I opened up an &lt;a href=&quot;http://codepad.org/&quot;&gt;online c++ compiler&lt;/a&gt; and got to testing quickly.
+In C++ you can import a library called &lt;code class=&quot;highlighter-rouge&quot;&gt;bitset&lt;/code&gt;. It is useful when you want to print out your bitpattern and see the result when you are shifting bits. Here is an example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;bitset&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;uint8_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;part&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;35981&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  
+  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;part&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will output:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c--&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;mi&quot;&gt;11111111&lt;/span&gt;
+&lt;span class=&quot;mo&quot;&gt;00001111&lt;/span&gt;
+&lt;span class=&quot;mo&quot;&gt;00000000000000001000110010001101&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Sat, 03 Dec 2016 11:18:00 +0100</pubDate>
+        <link>http://localhost:4000//c++/2016/12/03/C++-view-bits.html</link>
+        <guid isPermaLink="true">http://localhost:4000//c++/2016/12/03/C++-view-bits.html</guid>
+        
+        
+        <category>c++</category>
+        
+      </item>
+    
+      <item>
+        <title>Blender Script: bulk export objects</title>
+        <description>&lt;p&gt;When working with blender, something you will most likely do is export your object.
+If there are a lot of these objects, and you want to export your meshes into seperate .obj files, it can be a very tedious job.
+The script below is one I use to make this as fast and easy as possible:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bpy&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# -----&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# optional if you want to export a folder but the folder might not exist yet&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;abspath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//exports/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;makedirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# -----&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#1&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'MESH'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'DESELECT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#3&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#4&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;abspath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//exports/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;.obj&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#5&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;export_scene&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filepath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;use_selection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;use_materials&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;global_scale&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;use_smooth_groups&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;use_normals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;use_uvs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#6&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;First, we loop over all the objects in the scene &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt; and check if the object is a mesh &lt;code class=&quot;highlighter-rouge&quot;&gt;(2)&lt;/code&gt;.
+If we found a mesh, we deselect everything in the scene &lt;code class=&quot;highlighter-rouge&quot;&gt;(3)&lt;/code&gt;, and select the mesh we want to export &lt;code class=&quot;highlighter-rouge&quot;&gt;(4)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then we define where the objects will be saved &lt;code class=&quot;highlighter-rouge&quot;&gt;(5)&lt;/code&gt;. In this example the objects will be saved in a folder named &lt;code class=&quot;highlighter-rouge&quot;&gt;exports&lt;/code&gt; (optionally add the folder).
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;bpy.path.abspath&lt;/code&gt; will return the absolute path and the &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; is an identifier in blender that points to the current blend file.
+We add the data name of the object to it, along with the &lt;code class=&quot;highlighter-rouge&quot;&gt;.obj&lt;/code&gt; extension. If the blend file is not saved, the absolute path will be empty.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, we export the obj with the settings we want &lt;code class=&quot;highlighter-rouge&quot;&gt;(6)&lt;/code&gt;. In this example, only the selection and no materials will be exported.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Sep 2016 12:18:00 +0200</pubDate>
+        <link>http://localhost:4000//blender/python/2016/09/01/blender-bulk-export.html</link>
+        <guid isPermaLink="true">http://localhost:4000//blender/python/2016/09/01/blender-bulk-export.html</guid>
+        
+        
+        <category>blender</category>
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Terminal: check for valid json</title>
+        <description>&lt;p&gt;When I manually want to check for a valid json, I have always used &lt;a href=&quot;http://jsonlint.com/&quot;&gt;jsonlint&lt;/a&gt;. I discovered that jsonlint has an npm and ruby package.
+You can find the plugin here: &lt;a href=&quot;https://github.com/zaach/jsonlint&quot;&gt;npm&lt;/a&gt; or &lt;a href=&quot;https://github.com/PagerDuty/jsonlint&quot;&gt;ruby&lt;/a&gt;.
+You can either install it with &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install jsonlint -g&lt;/code&gt; (for npm) or &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jsonlint&lt;/code&gt; (for ruby).&lt;/p&gt;
+
+&lt;p&gt;You can now use it in terminal like this &lt;code class=&quot;highlighter-rouge&quot;&gt;jsonlint filepath.json&lt;/code&gt;. This will output nothing if it was successful or it will print where it went wrong.&lt;/p&gt;
+
+&lt;p&gt;Or if you want to use it in a script that will check for the validity, here is an example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+jsonlint &lt;span class=&quot;nv&quot;&gt;$JSON_TO_VALIDATE_PATH&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Check if json is valid&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; !&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;JSON NOT VALID
+    &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
+&lt;span class=&quot;k&quot;&gt;else
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;JSON IS VALID
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Thu, 18 Aug 2016 12:18:00 +0200</pubDate>
+        <link>http://localhost:4000//terminal/ruby/npm/bash/2016/08/18/terminal-json.html</link>
+        <guid isPermaLink="true">http://localhost:4000//terminal/ruby/npm/bash/2016/08/18/terminal-json.html</guid>
+        
+        
+        <category>terminal</category>
+        
+        <category>ruby</category>
+        
+        <category>npm</category>
+        
+        <category>bash</category>
+        
+      </item>
     
       <item>
         <title>Blender script: How to change the object data name to the object name</title>
@@ -15,8 +217,8 @@
 There is a difference in the name of the object itself, and the name of the object data.
 When you rename one, the other isn’t automatically renamed.&lt;/p&gt;
 
-&lt;p&gt;When you export your object to a &lt;code&gt;.obj&lt;/code&gt; and the object has different names, it will put these names together during export. For instance, your object is named &lt;code&gt;Floor&lt;/code&gt;, and the object data name is &lt;code&gt;Plane&lt;/code&gt;.
-When the object is exported, the mesh will have the name &lt;code&gt;FloorPlane&lt;/code&gt;. If both names are equal, it will not duplicate the names. For example; the object name and data name are both &lt;code&gt;Floor&lt;/code&gt;, the exported name will be &lt;code&gt;Floor&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;When you export your object to a &lt;code class=&quot;highlighter-rouge&quot;&gt;.obj&lt;/code&gt; and the object has different names, it will put these names together during export. For instance, your object is named &lt;code class=&quot;highlighter-rouge&quot;&gt;Floor&lt;/code&gt;, and the object data name is &lt;code class=&quot;highlighter-rouge&quot;&gt;Plane&lt;/code&gt;.
+When the object is exported, the mesh will have the name &lt;code class=&quot;highlighter-rouge&quot;&gt;FloorPlane&lt;/code&gt;. If both names are equal, it will not duplicate the names. For example; the object name and data name are both &lt;code class=&quot;highlighter-rouge&quot;&gt;Floor&lt;/code&gt;, the exported name will be &lt;code class=&quot;highlighter-rouge&quot;&gt;Floor&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Since I don’t want to manually go over every object, I use this very small script that will change all the names to match the object name:&lt;/p&gt;
 
@@ -25,11 +227,11 @@ When the object is exported, the mesh will have the name &lt;code&gt;FloorPlane&
 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#1&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;This will loop over all the objects &lt;code&gt;(1)&lt;/code&gt; in the scene and rename the data name to the object name &lt;code&gt;(2)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This will loop over all the objects &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt; in the scene and rename the data name to the object name &lt;code class=&quot;highlighter-rouge&quot;&gt;(2)&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Aug 2016 12:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//blender/2016/08/15/blender-datanames.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//blender/2016/08/15/blender-datanames.html</guid>
+        <link>http://localhost:4000//blender/2016/08/15/blender-datanames.html</link>
+        <guid isPermaLink="true">http://localhost:4000//blender/2016/08/15/blender-datanames.html</guid>
         
         
         <category>blender</category>
@@ -38,7 +240,7 @@ When the object is exported, the mesh will have the name &lt;code&gt;FloorPlane&
     
       <item>
         <title>Blender script: How to make sure that every face has maximum 4 edges</title>
-        <description>&lt;p&gt;When exporting an &lt;code&gt;.obj&lt;/code&gt; object for use within Three.js, you will likely use the &lt;code&gt;OBJLoader.js&lt;/code&gt; for importing the object.
+        <description>&lt;p&gt;When exporting an &lt;code class=&quot;highlighter-rouge&quot;&gt;.obj&lt;/code&gt; object for use within Three.js, you will likely use the &lt;code class=&quot;highlighter-rouge&quot;&gt;OBJLoader.js&lt;/code&gt; for importing the object.
 One thing the OBJLoader does not support, are objects with n-gons.&lt;/p&gt;
 
 &lt;p&gt;In order for the object to correctly import, every face can have maximum 4 edges. I made a script that will automatically check if these faces are present and change them to quads/triangles.&lt;/p&gt;
@@ -46,24 +248,24 @@ One thing the OBJLoader does not support, are objects with n-gons.&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bpy&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#1&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;MESH&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'MESH'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;active&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#3&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode_set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;EDIT&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#4&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode_set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'EDIT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#4&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tool_settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh_select_mode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#5&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;DESELECT&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#6&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_face_by_sides&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;GREATER&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#7&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'DESELECT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#6&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select_face_by_sides&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'GREATER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#7&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quads_convert_to_tris&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#8&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mesh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tris_convert_to_quads&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#9&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode_set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;OBJECT&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#10&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+		&lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ops&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode_set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'OBJECT'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#10&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;First, we loop over all the objects in the scene &lt;code&gt;(1)&lt;/code&gt; and check if the object is a mesh &lt;code&gt;(2)&lt;/code&gt;. When we have a mesh, we will make that mesh the currently active object &lt;code&gt;(3)&lt;/code&gt;. 
-We do this to make sure we have the right object selected when we are going into EDIT mode &lt;code&gt;(4)&lt;/code&gt;. In EDIT mode, we make sure we are going to work with the faces &lt;code&gt;(5)&lt;/code&gt;, and deselect all faces that would currently be selected &lt;code&gt;(6)&lt;/code&gt;. 
-After that, we search and select all the faces that have more than 4 edges &lt;code&gt;(7)&lt;/code&gt;. We triangulate these faces &lt;code&gt;(8)&lt;/code&gt;, and then attempt to convert these triangles into quads &lt;code&gt;(9)&lt;/code&gt;.
-Last but not least, before moving on and searching for the next mesh, we set the scene back into object mode &lt;code&gt;(10)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;First, we loop over all the objects in the scene &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt; and check if the object is a mesh &lt;code class=&quot;highlighter-rouge&quot;&gt;(2)&lt;/code&gt;. When we have a mesh, we will make that mesh the currently active object &lt;code class=&quot;highlighter-rouge&quot;&gt;(3)&lt;/code&gt;. 
+We do this to make sure we have the right object selected when we are going into EDIT mode &lt;code class=&quot;highlighter-rouge&quot;&gt;(4)&lt;/code&gt;. In EDIT mode, we make sure we are going to work with the faces &lt;code class=&quot;highlighter-rouge&quot;&gt;(5)&lt;/code&gt;, and deselect all faces that would currently be selected &lt;code class=&quot;highlighter-rouge&quot;&gt;(6)&lt;/code&gt;. 
+After that, we search and select all the faces that have more than 4 edges &lt;code class=&quot;highlighter-rouge&quot;&gt;(7)&lt;/code&gt;. We triangulate these faces &lt;code class=&quot;highlighter-rouge&quot;&gt;(8)&lt;/code&gt;, and then attempt to convert these triangles into quads &lt;code class=&quot;highlighter-rouge&quot;&gt;(9)&lt;/code&gt;.
+Last but not least, before moving on and searching for the next mesh, we set the scene back into object mode &lt;code class=&quot;highlighter-rouge&quot;&gt;(10)&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Aug 2016 12:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//blender/2016/08/14/blender-polygon.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//blender/2016/08/14/blender-polygon.html</guid>
+        <link>http://localhost:4000//blender/2016/08/14/blender-polygon.html</link>
+        <guid isPermaLink="true">http://localhost:4000//blender/2016/08/14/blender-polygon.html</guid>
         
         
         <category>blender</category>

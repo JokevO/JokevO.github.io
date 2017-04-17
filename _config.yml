@@ -3,7 +3,7 @@ description: I like programming
 meta_description: "Blog"
 
 markdown: kramdown
-highlighter: pygments
+#highlighter: pygments
 logo: false
 paginate: 15
 baseurl: /

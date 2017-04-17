@@ -31,11 +31,11 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Blender script: How to change the object data name to the object name</h1>
+            <h1 class="post-title">Tasker: launch app when you plug in headphones</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-08-15">15 Aug 2016</time>
+                <time class="post-date" datetime="2017-04-17">17 Apr 2017</time>
                 
-                    on blender
+                    on tasker and android
                 
             </section>
         </header>
@@ -49,30 +49,33 @@
         </header> -->
 
         <!-- <span class="post-meta">
-            <time datetime="2016-08-15">15 Aug 2016</time>
+            <time datetime="2017-04-17">17 Apr 2017</time>
             
-                on blender
+                on tasker and android
             
         </span> -->
 
-        <!-- <h1 class="post-title">Blender script: How to change the object data name to the object name</h1> -->
+        <!-- <h1 class="post-title">Tasker: launch app when you plug in headphones</h1> -->
 
         <section class="post-content">
-            <p>If you rename an object in blender, you likely didn’t change the name of the object data.
-There is a difference in the name of the object itself, and the name of the object data.
-When you rename one, the other isn’t automatically renamed.</p>
+            <p>Another <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a> post, I love how you can automate almost everything you usually have to do manually.
+This is a very easy task, but I find it very useful. When I am at work, I listen to <a href="https://play.google.com/store/apps/details?id=com.noisli.noisli">Noisli</a>.
+I find this helps me keep my focus, but you can also do this with <a href="https://play.google.com/store/apps/details?id=com.spotify.music">Spotify</a> or any other app.
+I listen to this on my phone, but when I have a meeting, I do take my phone with me.</p>
 
-<p>When you export your object to a <code class="highlighter-rouge">.obj</code> and the object has different names, it will put these names together during export. For instance, your object is named <code class="highlighter-rouge">Floor</code>, and the object data name is <code class="highlighter-rouge">Plane</code>.
-When the object is exported, the mesh will have the name <code class="highlighter-rouge">FloorPlane</code>. If both names are equal, it will not duplicate the names. For example; the object name and data name are both <code class="highlighter-rouge">Floor</code>, the exported name will be <code class="highlighter-rouge">Floor</code></p>
+<p>Therefore I made a task that will launch <a href="https://play.google.com/store/apps/details?id=com.noisli.noisli">Noisli</a> when I plug in my headphones, and kill the app when I unplug them:</p>
+<ol>
+  <li>Go to the tab <code class="highlighter-rouge">TASKS</code> and add a new one, called <code class="highlighter-rouge">Launch Noisli</code>.</li>
+  <li>Add an action <code class="highlighter-rouge">App -&gt; Launch App</code>, and select the app you want to open.</li>
+  <li>Press back button to confirm.</li>
+  <li>Add another task called <code class="highlighter-rouge">Kill Noisli</code>.</li>
+  <li>Add the action <code class="highlighter-rouge">App -&gt; Kill App</code>, and select the app you want to close when you unplug your headphones.</li>
+  <li>In tab <code class="highlighter-rouge">PROFILES</code>, add a new profile <code class="highlighter-rouge">State -&gt; Hardware -&gt; Headset Plugged</code>. Press back button to confirm.</li>
+  <li>Link task <code class="highlighter-rouge">Launch Noisli</code>. This will launch the app when your headset is plugged in.</li>
+  <li>Long press <code class="highlighter-rouge">Launch Noisli</code> in the profile and press <code class="highlighter-rouge">Add Exit Task</code>.</li>
+  <li>Link <code class="highlighter-rouge">Kill Noisli</code> to the exit task and it will kill the app when you disconnect your headphones.</li>
+</ol>
 
-<p>Since I don’t want to manually go over every object, I use this very small script that will change all the names to match the object name:</p>
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bpy</span>
-
-<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span> <span class="c">#1</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="c">#2</span></code></pre></figure>
-
-<p>This will loop over all the objects <code class="highlighter-rouge">(1)</code> in the scene and rename the data name to the object name <code class="highlighter-rouge">(2)</code>.</p>
 
         </section>
 
@@ -85,15 +88,15 @@ When the object is exported, the mesh will have the name <code class="highlighte
             <!-- Share links section -->
             <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Blender script: How to change the object data name to the object name&amp;url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Tasker: launch app when you plug in headphones&amp;url=http://jokevanoijen.be/tasker/android/2017/04/17/tasker-launch-app.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/tasker/android/2017/04/17/tasker-launch-app.html"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/tasker/android/2017/04/17/tasker-launch-app.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>

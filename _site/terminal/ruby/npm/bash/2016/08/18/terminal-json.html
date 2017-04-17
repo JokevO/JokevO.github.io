@@ -31,11 +31,11 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Blender script: How to change the object data name to the object name</h1>
+            <h1 class="post-title">Terminal: check for valid json</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2016-08-15">15 Aug 2016</time>
+                <time class="post-date" datetime="2016-08-18">18 Aug 2016</time>
                 
-                    on blender
+                    on terminal, ruby, npm, and bash
                 
             </section>
         </header>
@@ -49,30 +49,36 @@
         </header> -->
 
         <!-- <span class="post-meta">
-            <time datetime="2016-08-15">15 Aug 2016</time>
+            <time datetime="2016-08-18">18 Aug 2016</time>
             
-                on blender
+                on terminal, ruby, npm, and bash
             
         </span> -->
 
-        <!-- <h1 class="post-title">Blender script: How to change the object data name to the object name</h1> -->
+        <!-- <h1 class="post-title">Terminal: check for valid json</h1> -->
 
         <section class="post-content">
-            <p>If you rename an object in blender, you likely didn’t change the name of the object data.
-There is a difference in the name of the object itself, and the name of the object data.
-When you rename one, the other isn’t automatically renamed.</p>
+            <p>When I manually want to check for a valid json, I have always used <a href="http://jsonlint.com/">jsonlint</a>. I discovered that jsonlint has an npm and ruby package.
+You can find the plugin here: <a href="https://github.com/zaach/jsonlint">npm</a> or <a href="https://github.com/PagerDuty/jsonlint">ruby</a>.
+You can either install it with <code class="highlighter-rouge">npm install jsonlint -g</code> (for npm) or <code class="highlighter-rouge">gem install jsonlint</code> (for ruby).</p>
 
-<p>When you export your object to a <code class="highlighter-rouge">.obj</code> and the object has different names, it will put these names together during export. For instance, your object is named <code class="highlighter-rouge">Floor</code>, and the object data name is <code class="highlighter-rouge">Plane</code>.
-When the object is exported, the mesh will have the name <code class="highlighter-rouge">FloorPlane</code>. If both names are equal, it will not duplicate the names. For example; the object name and data name are both <code class="highlighter-rouge">Floor</code>, the exported name will be <code class="highlighter-rouge">Floor</code></p>
+<p>You can now use it in terminal like this <code class="highlighter-rouge">jsonlint filepath.json</code>. This will output nothing if it was successful or it will print where it went wrong.</p>
 
-<p>Since I don’t want to manually go over every object, I use this very small script that will change all the names to match the object name:</p>
+<p>Or if you want to use it in a script that will check for the validity, here is an example:</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bpy</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
 
-<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span> <span class="c">#1</span>
-    <span class="n">obj</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">name</span> <span class="c">#2</span></code></pre></figure>
+jsonlint <span class="nv">$JSON_TO_VALIDATE_PATH</span>
 
-<p>This will loop over all the objects <code class="highlighter-rouge">(1)</code> in the scene and rename the data name to the object name <code class="highlighter-rouge">(2)</code>.</p>
+<span class="c">#Check if json is valid</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> !<span class="o">=</span> 0 <span class="o">]</span>
+<span class="k">then
+    </span><span class="nb">echo </span>JSON NOT VALID
+    <span class="nb">exit </span>1
+<span class="k">else
+    </span><span class="nb">echo </span>JSON IS VALID
+<span class="k">fi</span></code></pre></figure>
+
 
         </section>
 
@@ -85,15 +91,15 @@ When the object is exported, the mesh will have the name <code class="highlighte
             <!-- Share links section -->
             <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Blender script: How to change the object data name to the object name&amp;url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Terminal: check for valid json&amp;url=http://jokevanoijen.be/terminal/ruby/npm/bash/2016/08/18/terminal-json.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/terminal/ruby/npm/bash/2016/08/18/terminal-json.html"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/blender/2016/08/15/blender-datanames.html"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/terminal/ruby/npm/bash/2016/08/18/terminal-json.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>

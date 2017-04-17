@@ -41,7 +41,7 @@
         </header>
 
 <!--         <header class="post-header">
-            <a id="blog-logo" href="jokevanoijen.be">
+            <a id="blog-logo" href="http://localhost:4000">
                 
                     <span class="blog-title">JokevO</span>
                 
@@ -58,7 +58,7 @@
         <!-- <h1 class="post-title">Blender script: How to make sure that every face has maximum 4 edges</h1> -->
 
         <section class="post-content">
-            <p>When exporting an <code>.obj</code> object for use within Three.js, you will likely use the <code>OBJLoader.js</code> for importing the object.
+            <p>When exporting an <code class="highlighter-rouge">.obj</code> object for use within Three.js, you will likely use the <code class="highlighter-rouge">OBJLoader.js</code> for importing the object.
 One thing the OBJLoader does not support, are objects with n-gons.</p>
 
 <p>In order for the object to correctly import, every face can have maximum 4 edges. I made a script that will automatically check if these faces are present and change them to quads/triangles.</p>
@@ -66,20 +66,20 @@ One thing the OBJLoader does not support, are objects with n-gons.</p>
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">bpy</span>
 
 <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">bpy</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">objects</span><span class="p">:</span> <span class="c">#1</span>
-	<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s">&#39;MESH&#39;</span><span class="p">:</span> <span class="c">#2</span>
+	<span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="nb">type</span> <span class="o">==</span> <span class="s">'MESH'</span><span class="p">:</span> <span class="c">#2</span>
 		<span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">active</span> <span class="o">=</span> <span class="n">obj</span> <span class="c">#3</span>
-		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">mode_set</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="s">&#39;EDIT&#39;</span><span class="p">)</span> <span class="c">#4</span>
+		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="nb">object</span><span class="o">.</span><span class="n">mode_set</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="s">'EDIT'</span><span class="p">)</span> <span class="c">#4</span>
 		<span class="n">bpy</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">tool_settings</span><span class="o">.</span><span class="n">mesh_select_mode</span> <span class="o">=</span> <span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span> <span class="c">#5</span>
-		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">&#39;DESELECT&#39;</span><span class="p">)</span> <span class="c">#6</span>
-		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">select_face_by_sides</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">&#39;GREATER&#39;</span><span class="p">)</span> <span class="c">#7</span>
+		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">select_all</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s">'DESELECT'</span><span class="p">)</span> <span class="c">#6</span>
+		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">select_face_by_sides</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">'GREATER'</span><span class="p">)</span> <span class="c">#7</span>
 		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">quads_convert_to_tris</span><span class="p">()</span> <span class="c">#8</span>
 		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">tris_convert_to_quads</span><span class="p">()</span> <span class="c">#9</span>
-		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">mode_set</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="s">&#39;OBJECT&#39;</span><span class="p">)</span> <span class="c">#10</span></code></pre></figure>
+		<span class="n">bpy</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="nb">object</span><span class="o">.</span><span class="n">mode_set</span><span class="p">(</span><span class="n">mode</span> <span class="o">=</span> <span class="s">'OBJECT'</span><span class="p">)</span> <span class="c">#10</span></code></pre></figure>
 
-<p>First, we loop over all the objects in the scene <code>(1)</code> and check if the object is a mesh <code>(2)</code>. When we have a mesh, we will make that mesh the currently active object <code>(3)</code>. 
-We do this to make sure we have the right object selected when we are going into EDIT mode <code>(4)</code>. In EDIT mode, we make sure we are going to work with the faces <code>(5)</code>, and deselect all faces that would currently be selected <code>(6)</code>. 
-After that, we search and select all the faces that have more than 4 edges <code>(7)</code>. We triangulate these faces <code>(8)</code>, and then attempt to convert these triangles into quads <code>(9)</code>.
-Last but not least, before moving on and searching for the next mesh, we set the scene back into object mode <code>(10)</code>.</p>
+<p>First, we loop over all the objects in the scene <code class="highlighter-rouge">(1)</code> and check if the object is a mesh <code class="highlighter-rouge">(2)</code>. When we have a mesh, we will make that mesh the currently active object <code class="highlighter-rouge">(3)</code>. 
+We do this to make sure we have the right object selected when we are going into EDIT mode <code class="highlighter-rouge">(4)</code>. In EDIT mode, we make sure we are going to work with the faces <code class="highlighter-rouge">(5)</code>, and deselect all faces that would currently be selected <code class="highlighter-rouge">(6)</code>. 
+After that, we search and select all the faces that have more than 4 edges <code class="highlighter-rouge">(7)</code>. We triangulate these faces <code class="highlighter-rouge">(8)</code>, and then attempt to convert these triangles into quads <code class="highlighter-rouge">(9)</code>.
+Last but not least, before moving on and searching for the next mesh, we set the scene back into object mode <code class="highlighter-rouge">(10)</code>.</p>
 
         </section>
 

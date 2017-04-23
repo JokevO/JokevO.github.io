@@ -21,7 +21,7 @@ In orde to test if this works correctly, you can create an `Alert -> Flash` and 
 6. Add a new action `Code -> JavaScriptlet` and add this code `var title = JSON.parse(global('HTTPD')).forecast.txt_forecast.forecastday[0].title;`.
 7. Add a new action `Code -> JavaScriptlet` and add this code `var icon = JSON.parse(global('HTTPD')).forecast.txt_forecast.forecastday[0].icon_url;`.
 8. Add a new action `Code -> JavaScriptlet` and add this code `var city =JSON.parse(global('HTTPD')).current_observation.display_location.city;`.
-9. I used [AutoNotification] to create the actual notification.
+9. I used [AutoNotification] to create the actual notification. When the app is installed, create a new action `Plugin -> AutoNotification`.
 10. Under Texts, as Title and Title Expanded, set `%title`.
 11. Under Texts, as Text and Text Expanded, set `%weather`.
 12. Under Texts, as SubText, set `%city`.

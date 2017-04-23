@@ -77,7 +77,7 @@ I used the <a href="http://api.wunderground.com">Wunderground</a> api, I signed 
   <li>Add a new action <code class="highlighter-rouge">Code -&gt; JavaScriptlet</code> and add this code <code class="highlighter-rouge">var title = JSON.parse(global('HTTPD')).forecast.txt_forecast.forecastday[0].title;</code>.</li>
   <li>Add a new action <code class="highlighter-rouge">Code -&gt; JavaScriptlet</code> and add this code <code class="highlighter-rouge">var icon = JSON.parse(global('HTTPD')).forecast.txt_forecast.forecastday[0].icon_url;</code>.</li>
   <li>Add a new action <code class="highlighter-rouge">Code -&gt; JavaScriptlet</code> and add this code <code class="highlighter-rouge">var city =JSON.parse(global('HTTPD')).current_observation.display_location.city;</code>.</li>
-  <li>I used <a href="https://play.google.com/store/apps/details?id=com.joaomgcd.autonotification">AutoNotification</a> to create the actual notification.</li>
+  <li>I used <a href="https://play.google.com/store/apps/details?id=com.joaomgcd.autonotification">AutoNotification</a> to create the actual notification. When the app is installed, create a new action <code class="highlighter-rouge">Plugin -&gt; AutoNotification</code>.</li>
   <li>Under Texts, as Title and Title Expanded, set <code class="highlighter-rouge">%title</code>.</li>
   <li>Under Texts, as Text and Text Expanded, set <code class="highlighter-rouge">%weather</code>.</li>
   <li>Under Texts, as SubText, set <code class="highlighter-rouge">%city</code>.</li>

@@ -5,9 +5,60 @@
     <description>I like programming</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Apr 2017 19:12:23 +0200</pubDate>
-    <lastBuildDate>Mon, 17 Apr 2017 19:12:23 +0200</lastBuildDate>
+    <pubDate>Sun, 23 Apr 2017 15:40:39 +0200</pubDate>
+    <lastBuildDate>Sun, 23 Apr 2017 15:40:39 +0200</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Tasker: weather report</title>
+        <description>&lt;p&gt;Instead of using a weather app, I made a &lt;a href=&quot;https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&quot;&gt;Tasker&lt;/a&gt; task that will give me a notification with a short weather description twice a day. In the morning the weather of the current day, and in the evening with the weather for the next day.&lt;/p&gt;
+
+&lt;p&gt;Here is how I created the task for the current day.
+I used the &lt;a href=&quot;http://api.wunderground.com&quot;&gt;Wunderground&lt;/a&gt; api, I signed up for an api key so I can get that data.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create a new task called &lt;code class=&quot;highlighter-rouge&quot;&gt;Weather Today&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add an action &lt;code class=&quot;highlighter-rouge&quot;&gt;Net -&amp;gt; HTTP Get&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Set Server:Port to &lt;code class=&quot;highlighter-rouge&quot;&gt;api.wunderground.com&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Set Path to &lt;code class=&quot;highlighter-rouge&quot;&gt;api/API_KEY/conditions/forecast/q/Belgium/ANTWERP.json&lt;/code&gt;. replace the &lt;code class=&quot;highlighter-rouge&quot;&gt;API_KEY&lt;/code&gt; with the key you created with &lt;a href=&quot;http://api.wunderground.com&quot;&gt;Wunderground&lt;/a&gt;. Replace &lt;code class=&quot;highlighter-rouge&quot;&gt;Belgium&lt;/code&gt; with the country you live in, and &lt;code class=&quot;highlighter-rouge&quot;&gt;ANTWERP&lt;/code&gt; with your current city.&lt;/li&gt;
+  &lt;li&gt;Go back to confirm.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In orde to test if this works correctly, you can create an &lt;code class=&quot;highlighter-rouge&quot;&gt;Alert -&amp;gt; Flash&lt;/code&gt; and set &lt;code class=&quot;highlighter-rouge&quot;&gt;%HTTPD&lt;/code&gt; as text. Press Play. If there is output, you know the call is correct.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add a new action &lt;code class=&quot;highlighter-rouge&quot;&gt;Code -&amp;gt; JavaScriptlet&lt;/code&gt; and add this code &lt;code class=&quot;highlighter-rouge&quot;&gt;var weather = JSON.parse(global('HTTPD')).forecast.txt_forecast.forecastday[0].fcttext_metric;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add a new action &lt;code class=&quot;highlighter-rouge&quot;&gt;Code -&amp;gt; JavaScriptlet&lt;/code&gt; and add this code &lt;code class=&quot;highlighter-rouge&quot;&gt;var title = JSON.parse(global('HTTPD')).forecast.txt_forecast.forecastday[0].title;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add a new action &lt;code class=&quot;highlighter-rouge&quot;&gt;Code -&amp;gt; JavaScriptlet&lt;/code&gt; and add this code &lt;code class=&quot;highlighter-rouge&quot;&gt;var icon = JSON.parse(global('HTTPD')).forecast.txt_forecast.forecastday[0].icon_url;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Add a new action &lt;code class=&quot;highlighter-rouge&quot;&gt;Code -&amp;gt; JavaScriptlet&lt;/code&gt; and add this code &lt;code class=&quot;highlighter-rouge&quot;&gt;var city =JSON.parse(global('HTTPD')).current_observation.display_location.city;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;I used &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.joaomgcd.autonotification&quot;&gt;AutoNotification&lt;/a&gt; to create the actual notification.&lt;/li&gt;
+  &lt;li&gt;Under Texts, as Title and Title Expanded, set &lt;code class=&quot;highlighter-rouge&quot;&gt;%title&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Under Texts, as Text and Text Expanded, set &lt;code class=&quot;highlighter-rouge&quot;&gt;%weather&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Under Texts, as SubText, set &lt;code class=&quot;highlighter-rouge&quot;&gt;%city&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Under Icons and Images, set &lt;code class=&quot;highlighter-rouge&quot;&gt;%icon&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Press back to confirm.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now the task is complete, we need to create a profile that will trigger the task when we want.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Go to tab &lt;code class=&quot;highlighter-rouge&quot;&gt;PROFILES&lt;/code&gt; and create a new profile &lt;code class=&quot;highlighter-rouge&quot;&gt;Time&lt;/code&gt; and set the time you would like the notification.&lt;/li&gt;
+  &lt;li&gt;Choose task &lt;code class=&quot;highlighter-rouge&quot;&gt;Weather Today&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Press back to confirm.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here is an example notification:
+&lt;img src=&quot;https://raw.github.com/JokevO/JokevO.github.io/master/assets/images/weatherscreen.png&quot; alt=&quot;alt text&quot; title=&quot;Example&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 23 Apr 2017 08:30:00 +0200</pubDate>
+        <link>http://localhost:4000//tasker/android/2017/04/23/tasker-weather-report.html</link>
+        <guid isPermaLink="true">http://localhost:4000//tasker/android/2017/04/23/tasker-weather-report.html</guid>
+        
+        
+        <category>tasker</category>
+        
+        <category>android</category>
+        
+      </item>
     
       <item>
         <title>Tasker: launch app when you plug in headphones</title>

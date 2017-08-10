@@ -41,7 +41,7 @@
         </header>
 
 <!--         <header class="post-header">
-            <a id="blog-logo" href="http://localhost:4000">
+            <a id="blog-logo" href="jokevanoijen.be">
                 
                     <span class="blog-title">JokevO</span>
                 
@@ -61,14 +61,12 @@
             <p>Instead of using a weather app, I made a <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a> task that will give me a notification with a short weather description twice a day. In the morning the weather of the current day, and in the evening with the weather for the next day.</p>
 
 <p>Here is how I created the task for the current day.
-I used the <a href="http://api.wunderground.com">Wunderground</a> api, I signed up for an api key so I can get that data.</p>
-<ol>
-  <li>Create a new task called <code class="highlighter-rouge">Weather Today</code>.</li>
-  <li>Add an action <code class="highlighter-rouge">Net -&gt; HTTP Get</code>.</li>
-  <li>Set Server:Port to <code class="highlighter-rouge">api.wunderground.com</code>.</li>
-  <li>Set Path to <code class="highlighter-rouge">api/API_KEY/conditions/forecast/q/Belgium/ANTWERP.json</code>. replace the <code class="highlighter-rouge">API_KEY</code> with the key you created with <a href="http://api.wunderground.com">Wunderground</a>. Replace <code class="highlighter-rouge">Belgium</code> with the country you live in, and <code class="highlighter-rouge">ANTWERP</code> with your current city.</li>
-  <li>Go back to confirm.</li>
-</ol>
+I used the <a href="http://api.wunderground.com">Wunderground</a> api, I signed up for an api key so I can get that data.
+1. Create a new task called <code class="highlighter-rouge">Weather Today</code>.
+2. Add an action <code class="highlighter-rouge">Net -&gt; HTTP Get</code>.
+3. Set Server:Port to <code class="highlighter-rouge">api.wunderground.com</code>.
+3. Set Path to <code class="highlighter-rouge">api/API_KEY/conditions/forecast/q/Belgium/ANTWERP.json</code>. replace the <code class="highlighter-rouge">API_KEY</code> with the key you created with <a href="http://api.wunderground.com">Wunderground</a>. Replace <code class="highlighter-rouge">Belgium</code> with the country you live in, and <code class="highlighter-rouge">ANTWERP</code> with your current city.
+4. Go back to confirm.</p>
 
 <p>In orde to test if this works correctly, you can create an <code class="highlighter-rouge">Alert -&gt; Flash</code> and set <code class="highlighter-rouge">%HTTPD</code> as text. Press Play. If there is output, you know the call is correct.</p>
 
@@ -85,12 +83,10 @@ I used the <a href="http://api.wunderground.com">Wunderground</a> api, I signed 
   <li>Press back to confirm.</li>
 </ol>
 
-<p>Now the task is complete, we need to create a profile that will trigger the task when we want.</p>
-<ol>
-  <li>Go to tab <code class="highlighter-rouge">PROFILES</code> and create a new profile <code class="highlighter-rouge">Time</code> and set the time you would like the notification.</li>
-  <li>Choose task <code class="highlighter-rouge">Weather Today</code>.</li>
-  <li>Press back to confirm.</li>
-</ol>
+<p>Now the task is complete, we need to create a profile that will trigger the task when we want.
+15. Go to tab <code class="highlighter-rouge">PROFILES</code> and create a new profile <code class="highlighter-rouge">Time</code> and set the time you would like the notification.
+16. Choose task <code class="highlighter-rouge">Weather Today</code>.
+17. Press back to confirm.</p>
 
 <p>Here is an example notification:
 <img src="https://raw.github.com/JokevO/JokevO.github.io/master/assets/images/weatherscreen.png" alt="alt text" title="Example" /></p>

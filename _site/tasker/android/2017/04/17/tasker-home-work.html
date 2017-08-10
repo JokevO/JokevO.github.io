@@ -41,7 +41,7 @@
         </header>
 
 <!--         <header class="post-header">
-            <a id="blog-logo" href="http://localhost:4000">
+            <a id="blog-logo" href="jokevanoijen.be">
                 
                     <span class="blog-title">JokevO</span>
                 
@@ -65,35 +65,29 @@ It also does not use a lot of battery but will potentially save some.</p>
 
 <p>Here is how I automated it using <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a>:</p>
 
-<p>I created a task that will turn on Wifi and turn off Bluetooth:</p>
-<ol>
-  <li>Open Tasker and in the tab <code class="highlighter-rouge">TASKS</code>, make a new task called <code class="highlighter-rouge">At Home/Work</code>.</li>
-  <li>In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>.</li>
-  <li>Press back button to confirm.</li>
-  <li>Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>.</li>
-  <li>Press back button again to confirm task.</li>
-</ol>
+<p>I created a task that will turn on Wifi and turn off Bluetooth:
+1. Open Tasker and in the tab <code class="highlighter-rouge">TASKS</code>, make a new task called <code class="highlighter-rouge">At Home/Work</code>. 
+2. In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>. 
+3. Press back button to confirm.
+4. Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>.
+5. Press back button again to confirm task.</p>
 
-<p>Then I created a task that will do the oposite:</p>
-<ol>
-  <li>Open Tasker and make a new task called <code class="highlighter-rouge">Leaving Home/Work</code>.</li>
-  <li>In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>.</li>
-  <li>Press back button to confirm.</li>
-  <li>Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>.</li>
-  <li>Press back button again to confirm task.</li>
-</ol>
+<p>Then I created a task that will do the oposite:
+1. Open Tasker and make a new task called <code class="highlighter-rouge">Leaving Home/Work</code>. 
+2. In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>. 
+3. Press back button to confirm.
+4. Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>.
+5. Press back button again to confirm task.</p>
 
 <p>Now we that we have the tasks ready, we just need to make them trigger at the right time.
 I will be using location.</p>
 
-<p>Trigger tasks:</p>
-<ol>
-  <li>Go to the tab <code class="highlighter-rouge">PROFILES</code> and add a new profile based on location.</li>
-  <li>Either fill in the right lat and lon, or longpress the map and it will put a marker there.
-Adjust the radius to 100m and whether or not you want to use gps or just net. I only use <code class="highlighter-rouge">Net</code>.</li>
-  <li>Link your <code class="highlighter-rouge">At Home/Work</code> task to the profile. You see it is linked with <code class="highlighter-rouge">-&gt;</code> icon in profile. This indicates that the task will be triggered when you enter the profile location.</li>
-  <li>Long press the task in profiles and select <code class="highlighter-rouge">Add Exit Task</code> and select the <code class="highlighter-rouge">Leaving Home/Work</code> task. You will see it linked with the <code class="highlighter-rouge">&lt;-</code> icon. This indicates the task that will be triggered when you exit that location.</li>
-</ol>
+<p>Trigger tasks:
+1. Go to the tab <code class="highlighter-rouge">PROFILES</code> and add a new profile based on location.
+2. Either fill in the right lat and lon, or longpress the map and it will put a marker there.
+Adjust the radius to 100m and whether or not you want to use gps or just net. I only use <code class="highlighter-rouge">Net</code>.
+3. Link your <code class="highlighter-rouge">At Home/Work</code> task to the profile. You see it is linked with <code class="highlighter-rouge">-&gt;</code> icon in profile. This indicates that the task will be triggered when you enter the profile location.
+4. Long press the task in profiles and select <code class="highlighter-rouge">Add Exit Task</code> and select the <code class="highlighter-rouge">Leaving Home/Work</code> task. You will see it linked with the <code class="highlighter-rouge">&lt;-</code> icon. This indicates the task that will be triggered when you exit that location.</p>
 
 
         </section>

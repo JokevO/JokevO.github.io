@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://jokevanoijen.be'
-# google_analytics: 'UA-33524716-3'
+google_analytics: 'UA-33524716-3'
 gems: [jekyll-paginate]
 
 # Details for the RSS feed generator

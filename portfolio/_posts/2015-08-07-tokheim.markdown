@@ -1,0 +1,10 @@
+---
+layout: detailPortfolio
+title:  "Tokheim"
+subtitle: "Mobile Payment"
+date:   2015-08-07 00:00:00
+categories: portfolio
+preview: https://raw.github.com/JokevO/JokevO.github.io/master/assets/images/portfolio/tokheim.png
+summary: Tokheim is an app that allows mobile payment at gas-stations through the use of iBeacons. I was responsable for transforming the POC to a store-ready version. 
+infolink: http://www.icapps.com/portfolio/tokheim/
+---

@@ -1,0 +1,11 @@
+---
+layout: detailPortfolio
+title:  "Bard"
+subtitle: "Document Management System"
+date:   2014-08-07 00:00:00
+categories: portfolio
+preview: https://raw.github.com/JokevO/JokevO.github.io/master/assets/images/portfolio/bard.png
+url: http://google.be
+summary: This project is an in-house business application for Bard Europe. When I joined this project, it was already in its latest development stages. I helped with bugfixing, performance updates and also implemented some small features.
+infolink: http://www.icapps.com/portfolio/bard-europe/
+---

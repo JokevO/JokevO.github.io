@@ -5,8 +5,8 @@
     <description>I like programming</description>
     <link>jokevanoijen.be//</link>
     <atom:link href="jokevanoijen.be//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Aug 2017 23:31:02 +0200</pubDate>
-    <lastBuildDate>Mon, 21 Aug 2017 23:31:02 +0200</lastBuildDate>
+    <pubDate>Fri, 25 Aug 2017 00:02:55 +0200</pubDate>
+    <lastBuildDate>Fri, 25 Aug 2017 00:02:55 +0200</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -78,9 +78,11 @@ Instead of doing that manually, I created a ruby script.&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 10 Aug 2017 08:30:00 +0200</pubDate>
-        <link>jokevanoijen.be//json/ruby/2017/08/10/ruby-manipulate-json.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//json/ruby/2017/08/10/ruby-manipulate-json.html</guid>
+        <link>jokevanoijen.be//snippets/json/ruby/2017/08/10/ruby-manipulate-json.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/json/ruby/2017/08/10/ruby-manipulate-json.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>json</category>
         
@@ -108,9 +110,11 @@ To keep the repetitive tasks to a minimum, I tried to script most of them. One o
 &lt;p&gt;Before manipulating the image in any way, make sure to store the current history state of the image &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt;. This way, you can always go back in history to that point. Then, resize the image to 2000 pixels in width &lt;code class=&quot;highlighter-rouge&quot;&gt;(2)&lt;/code&gt;. Using this method, the aspect ratio will be used for calculating height. After that, the image will be saved to &lt;code class=&quot;highlighter-rouge&quot;&gt;C:/image.png&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;(3)&lt;/code&gt;. This line will call the savePNG function above, saving it as a png with the compression and interlaced options added. To end the script, set the image history (saved in &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt;) to restore the image back to its original size&lt;code class=&quot;highlighter-rouge&quot;&gt;(4)&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Aug 2017 08:30:00 +0200</pubDate>
-        <link>jokevanoijen.be//photoshop/2017/08/10/ps-script-save-history.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//photoshop/2017/08/10/ps-script-save-history.html</guid>
+        <link>jokevanoijen.be//snippets/photoshop/2017/08/10/ps-script-save-history.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/photoshop/2017/08/10/ps-script-save-history.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>photoshop</category>
         
@@ -153,9 +157,11 @@ I used the &lt;a href=&quot;http://api.wunderground.com&quot;&gt;Wunderground&lt
 
 </description>
         <pubDate>Sun, 23 Apr 2017 08:30:00 +0200</pubDate>
-        <link>jokevanoijen.be//tasker/android/2017/04/23/tasker-weather-report.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//tasker/android/2017/04/23/tasker-weather-report.html</guid>
+        <link>jokevanoijen.be//snippets/tasker/android/2017/04/23/tasker-weather-report.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/tasker/android/2017/04/23/tasker-weather-report.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>tasker</category>
         
@@ -183,9 +189,11 @@ I listen to this on my phone, but when I have a meeting, I do take my phone with
 
 </description>
         <pubDate>Mon, 17 Apr 2017 11:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//tasker/android/2017/04/17/tasker-launch-app.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//tasker/android/2017/04/17/tasker-launch-app.html</guid>
+        <link>jokevanoijen.be//snippets/tasker/android/2017/04/17/tasker-launch-app.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/tasker/android/2017/04/17/tasker-launch-app.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>tasker</category>
         
@@ -228,9 +236,11 @@ Adjust the radius to 100m and whether or not you want to use gps or just net. I 
 
 </description>
         <pubDate>Mon, 17 Apr 2017 08:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//tasker/android/2017/04/17/tasker-home-work.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//tasker/android/2017/04/17/tasker-home-work.html</guid>
+        <link>jokevanoijen.be//snippets/tasker/android/2017/04/17/tasker-home-work.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/tasker/android/2017/04/17/tasker-home-work.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>tasker</category>
         
@@ -266,9 +276,11 @@ In C++ you can import a library called &lt;code class=&quot;highlighter-rouge&qu
 &lt;span class=&quot;mo&quot;&gt;00000000000000001000110010001101&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Sat, 03 Dec 2016 11:18:00 +0100</pubDate>
-        <link>jokevanoijen.be//c++/2016/12/03/C++-view-bits.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//c++/2016/12/03/C++-view-bits.html</guid>
+        <link>jokevanoijen.be//snippets/c++/2016/12/03/C++-view-bits.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/c++/2016/12/03/C++-view-bits.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>c++</category>
         
@@ -308,9 +320,11 @@ We add the data name of the object to it, along with the &lt;code class=&quot;hi
 &lt;p&gt;Last but not least, we export the obj with the settings we want &lt;code class=&quot;highlighter-rouge&quot;&gt;(6)&lt;/code&gt;. In this example, only the selection and no materials will be exported.&lt;/p&gt;
 </description>
         <pubDate>Thu, 01 Sep 2016 12:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//blender/python/2016/09/01/blender-bulk-export.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//blender/python/2016/09/01/blender-bulk-export.html</guid>
+        <link>jokevanoijen.be//snippets/blender/python/2016/09/01/blender-bulk-export.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/blender/python/2016/09/01/blender-bulk-export.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>blender</category>
         
@@ -343,9 +357,11 @@ jsonlint &lt;span class=&quot;nv&quot;&gt;$JSON_TO_VALIDATE_PATH&lt;/span&gt;
 
 </description>
         <pubDate>Thu, 18 Aug 2016 12:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//terminal/ruby/npm/bash/2016/08/18/terminal-json.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//terminal/ruby/npm/bash/2016/08/18/terminal-json.html</guid>
+        <link>jokevanoijen.be//snippets/terminal/ruby/npm/bash/2016/08/18/terminal-json.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/terminal/ruby/npm/bash/2016/08/18/terminal-json.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>terminal</category>
         
@@ -376,9 +392,11 @@ When the object is exported, the mesh will have the name &lt;code class=&quot;hi
 &lt;p&gt;This will loop over all the objects &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt; in the scene and rename the data name to the object name &lt;code class=&quot;highlighter-rouge&quot;&gt;(2)&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Aug 2016 12:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//blender/2016/08/15/blender-datanames.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//blender/2016/08/15/blender-datanames.html</guid>
+        <link>jokevanoijen.be//snippets/blender/2016/08/15/blender-datanames.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/blender/2016/08/15/blender-datanames.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>blender</category>
         
@@ -410,9 +428,11 @@ After that, we search and select all the faces that have more than 4 edges &lt;c
 Last but not least, before moving on and searching for the next mesh, we set the scene back into object mode &lt;code class=&quot;highlighter-rouge&quot;&gt;(10)&lt;/code&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Aug 2016 12:18:00 +0200</pubDate>
-        <link>jokevanoijen.be//blender/2016/08/14/blender-polygon.html</link>
-        <guid isPermaLink="true">jokevanoijen.be//blender/2016/08/14/blender-polygon.html</guid>
+        <link>jokevanoijen.be//snippets/blender/2016/08/14/blender-polygon.html</link>
+        <guid isPermaLink="true">jokevanoijen.be//snippets/blender/2016/08/14/blender-polygon.html</guid>
         
+        
+        <category>snippets</category>
         
         <category>blender</category>
         

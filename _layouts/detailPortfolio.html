@@ -1,0 +1,40 @@
+---
+layout: default
+archive: true
+post_class: detail-template
+---
+
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+    <nav class="main-nav overlay clearfix">
+            {% if page.logo %}
+                <a class="blog-logo" href="{{ site.baseurl }}">
+                    <img src="{{ page.logo }}" alt="Blog Logo" />
+                </a>
+            {% endif %}
+            <a class="back-button icon-arrow-left" href="../../../../portfolio.html">Portfolio</a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">{{ site.name }}</h1>
+            <h2 class="page-description">
+                {% if site.portfolio_description %} {{ site.portfolio_description }}. {% endif %}
+            </h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
+
+
+<main id="content" class="content" role="main">
+    <div class="detail-container">
+      <div class="detail-image">
+        <img src="{{ page.preview  }}" class="img">
+      </div>
+      <div class="detail-text-container">
+        <a class="subscribe-button subscribe-button-text" href={{ page.infolink }}>Extra Info</a>
+        <p class="detail-title">{{ page.title }}</p>
+        <p class="detail-subtitle">{{ page.subtitle }}</p>
+        <p class="detail-text">{{ page.summary }}</p>
+      </div>
+    </div>
+</main>

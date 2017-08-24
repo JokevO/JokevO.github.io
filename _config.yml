@@ -1,16 +1,19 @@
 name: JokevO
 description: I like programming
+portfolio_description: These are some projects I worked on
 meta_description: "Blog"
 
 markdown: kramdown
 #highlighter: pygments
 logo: false
 paginate: 15
-baseurl: /
+baseurl: jokevo.github.io/
 domain_name: 'http://jokevanoijen.be'
-google_analytics: 'UA-33524716-3'
+# google_analytics: 'UA-33524716-3'
 gems: [jekyll-paginate]
 
 # Details for the RSS feed generator
 url:            'jokevanoijen.be'
 
+collections:
+  - portfolio

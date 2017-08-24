@@ -1,0 +1,17 @@
+<div class="container">
+  {% for post in site.categories.portfolio %}
+    <div class="preview-panel">
+        <a href={{ post.url }}>
+          <div class="image-container">
+            <img src="{{ post.preview  }}" class="img">
+          </div>
+          <div class="text-container">
+            <p class="title">{{ post.title }}</p>
+            <p class="subtitle">{{ post.subtitle }}</p>
+          </div>
+        </a>
+        <!-- {{ post.title }} -->
+   </div>
+  {% endfor %}
+  {% cycle 'end row' : nil, '</div>', '</div>' %}
+</div>

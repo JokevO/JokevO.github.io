@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>JokevO - I like programming</title>
+    <meta name="description" content="Blog" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/portfolio.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css" />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/index.html">Home</a>
+        <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Tasker: automate your android phone</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-04-17">17 Apr 2017</time>
+                
+                    on snippets, tasker, and android
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="jokevanoijen.be">
+                
+                    <span class="blog-title">JokevO</span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2017-04-17">17 Apr 2017</time>
+            
+                on snippets, tasker, and android
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Tasker: automate your android phone</h1> -->
+
+        <section class="post-content">
+            <p>If there is one app I can definitely recommend when having an android phone, it is <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a>. This app is not free, but well worth the money. When you have to do something on your phone manually over and over, you can just automate it using the app.
+It also does not use a lot of battery but will potentially save some.</p>
+
+<p>One of the most simple things I do to save on battery, is to turn off wifi when I leave home, and turn it back on when at work and vice verca. Also, when I step outside I might want to get into the car and connect with it over Bluetooth. I would have to enable bluetooth when leaving home or work.</p>
+
+<p>Here is how I automated it using <a href="https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm">Tasker</a>:</p>
+
+<p>I created a task that will turn on Wifi and turn off Bluetooth:
+1. Open Tasker and in the tab <code class="highlighter-rouge">TASKS</code>, make a new task called <code class="highlighter-rouge">At Home/Work</code>. 
+2. In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>. 
+3. Press back button to confirm.
+4. Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>.
+5. Press back button again to confirm task.</p>
+
+<p>Then I created a task that will do the oposite:
+1. Open Tasker and make a new task called <code class="highlighter-rouge">Leaving Home/Work</code>. 
+2. In this task add an action <code class="highlighter-rouge">Net -&gt; WiFi</code>, and set <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">off</code>. 
+3. Press back button to confirm.
+4. Add a new action <code class="highlighter-rouge">Net -&gt; Bluetooth</code>, and <code class="highlighter-rouge">Set</code> to <code class="highlighter-rouge">on</code>.
+5. Press back button again to confirm task.</p>
+
+<p>Now we that we have the tasks ready, we just need to make them trigger at the right time.
+I will be using location.</p>
+
+<p>Trigger tasks:
+1. Go to the tab <code class="highlighter-rouge">PROFILES</code> and add a new profile based on location.
+2. Either fill in the right lat and lon, or longpress the map and it will put a marker there.
+Adjust the radius to 100m and whether or not you want to use gps or just net. I only use <code class="highlighter-rouge">Net</code>.
+3. Link your <code class="highlighter-rouge">At Home/Work</code> task to the profile. You see it is linked with <code class="highlighter-rouge">-&gt;</code> icon in profile. This indicates that the task will be triggered when you enter the profile location.
+4. Long press the task in profiles and select <code class="highlighter-rouge">Add Exit Task</code> and select the <code class="highlighter-rouge">Leaving Home/Work</code> task. You will see it linked with the <code class="highlighter-rouge">&lt;-</code> icon. This indicates the task that will be triggered when you exit that location.</p>
+
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Tasker: automate your android phone&amp;url=http://jokevanoijen.be/snippets/tasker/android/2017/04/17/tasker-home-work.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/snippets/tasker/android/2017/04/17/tasker-home-work.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/snippets/tasker/android/2017/04/17/tasker-home-work.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() {
+            var dsq = document.createElement('script'); 
+            dsq.type = 'text/javascript'; 
+            dsq.async = true;
+            dsq.src = '//jokevanoijen-1.disqus.com/embed.js';
+            document.body.appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">JokevO</a> &copy; 
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+         as a base.
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+</body>
+</html>

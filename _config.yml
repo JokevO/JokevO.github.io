@@ -7,7 +7,7 @@ markdown: kramdown
 #highlighter: pygments
 logo: false
 paginate: 15
-baseurl: jokevo.github.io/
+baseurl: /
 domain_name: 'http://jokevanoijen.be'
 google_analytics: 'UA-33524716-3'
 gems: [jekyll-paginate]

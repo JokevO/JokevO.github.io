@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Photoshop Script: save image in pieces"
+title:  "Photoshop script: save image in pieces"
 date:   2017-10-11 06:30:00
 categories: photoshop
 ---

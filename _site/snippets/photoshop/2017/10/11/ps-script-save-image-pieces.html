@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>JokevO - I like programming</title>
+    <meta name="description" content="Blog" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/portfolio.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css" />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="../../../../../../index.html">Home</a>
+        <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Photoshop Script: save image in pieces</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-10-11">11 Oct 2017</time>
+                
+                    on snippets and photoshop
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="http://localhost:4000">
+                
+                    <span class="blog-title">JokevO</span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2017-10-11">11 Oct 2017</time>
+            
+                on snippets and photoshop
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Photoshop Script: save image in pieces</h1> -->
+
+        <section class="post-content">
+            <p>For my personal project, I started with a map of the world in photoshop. This map was 16384x8192. I exported the map at about half the scale to use in unreal. When I wanted to build the project on my phone, I bumped into an issue with it. My phone could only load images that were maximum 2048x2048px.</p>
+
+<p>To export the map at 2048x2048 would lose too much of the detail. What I did instead, I split up the map (and globe to put the map on) in eight pieces. Now I do iterate on the map quite a lot and it would be a hassle to actually keep seperate photshop files for every piece of the map.</p>
+
+<p>Instead, I wrote a script that will split the map for me, and save the pieces to the correct location. Here is how I did it:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">savePNG</span><span class="p">(</span><span class="nx">saveFile</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//1</span>
+    <span class="kd">var</span> <span class="nx">saveOptions</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PNGSaveOptions</span><span class="p">();</span>  
+    <span class="nx">saveOptions</span><span class="p">.</span><span class="nx">compression</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>  <span class="c1">// (level of compression 0 .. 9       0 - without compression)</span>
+    <span class="nx">saveOptions</span><span class="p">.</span><span class="nx">interlaced</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">saveAs</span><span class="p">(</span><span class="nx">File</span><span class="p">(</span><span class="nx">saveFile</span><span class="p">),</span> <span class="nx">saveOptions</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">Extension</span><span class="p">.</span><span class="nx">LOWERCASE</span><span class="p">);</span>  
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">numberOfPieciesHorizontal</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">numberOfPiecesVertical</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">docwidth</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span> <span class="c1">//2</span>
+<span class="kd">var</span> <span class="nx">docheight</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span> <span class="c1">//2</span>
+<span class="kd">var</span> <span class="nx">sizeHorizontal</span> <span class="o">=</span> <span class="nx">docwidth</span> <span class="o">/</span> <span class="nx">numberOfPieciesHorizontal</span><span class="p">;</span> <span class="c1">//3</span>
+<span class="kd">var</span> <span class="nx">sizeVertical</span> <span class="o">=</span> <span class="nx">docheight</span> <span class="o">/</span> <span class="nx">numberOfPiecesVertical</span><span class="p">;</span> <span class="c1">//3</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">numberOfPieciesHorizontal</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//4</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">numberOfPiecesVertical</span><span class="p">;</span> <span class="o">++</span><span class="nx">j</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//5</span>
+    <span class="c1">// array is left, top, right, bottom</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">selection</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span>
+        <span class="nb">Array</span> <span class="p">(</span>
+            <span class="nb">Array</span><span class="p">(</span><span class="nx">i</span> <span class="o">*</span> <span class="nx">sizeHorizontal</span><span class="p">,</span> <span class="nx">j</span> <span class="o">*</span> <span class="nx">sizeVertical</span><span class="p">),</span>
+            <span class="nb">Array</span><span class="p">(</span><span class="nx">i</span> <span class="o">*</span> <span class="nx">sizeHorizontal</span><span class="p">,</span> <span class="nx">j</span> <span class="o">*</span> <span class="nx">sizeVertical</span> <span class="o">+</span> <span class="nx">sizeVertical</span><span class="p">),</span>
+            <span class="nb">Array</span><span class="p">(</span><span class="nx">i</span> <span class="o">*</span> <span class="nx">sizeHorizontal</span> <span class="o">+</span> <span class="nx">sizeHorizontal</span><span class="p">,</span> <span class="nx">j</span> <span class="o">*</span> <span class="nx">sizeVertical</span> <span class="o">+</span> <span class="nx">sizeVertical</span><span class="p">),</span>
+            <span class="nb">Array</span><span class="p">(</span><span class="nx">i</span><span class="o">*</span> <span class="nx">sizeHorizontal</span> <span class="o">+</span> <span class="nx">sizeHorizontal</span><span class="p">,</span> <span class="nx">j</span> <span class="o">*</span> <span class="nx">sizeVertical</span><span class="p">)</span>
+        <span class="p">),</span> <span class="nx">SelectionType</span><span class="p">.</span><span class="nx">REPLACE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">//6</span>
+    
+    <span class="c1">// crop</span>
+    <span class="kd">var</span> <span class="nx">savedStateCrop</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">activeHistoryState</span><span class="p">;</span> <span class="c1">//7</span>
+    <span class="nx">executeAction</span><span class="p">(</span><span class="nx">charIDToTypeID</span><span class="p">(</span><span class="s1">'Crop'</span><span class="p">),</span> <span class="k">new</span> <span class="nx">ActionDescriptor</span><span class="p">(),</span> <span class="nx">DialogModes</span><span class="p">.</span><span class="nx">NO</span><span class="p">);</span> <span class="c1">//8</span>
+
+    <span class="c1">// save</span>
+    <span class="nx">savePNG</span><span class="p">(</span><span class="s2">"C:/map"</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">"_"</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s2">".png"</span><span class="p">);</span> <span class="c1">//9</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">activeHistoryState</span> <span class="o">=</span> <span class="nx">savedStateCrop</span><span class="p">;</span> <span class="c1">//10</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>To start, we get the current height and width of the document <code class="highlighter-rouge">(2)</code>. Depending on how many pieces, we calculate the width and height of each piece <code class="highlighter-rouge">(3)</code>. After that, we loop over all the horizontal pieces we will create <code class="highlighter-rouge">(4)</code>, and immediatly go over the vertical ones <code class="highlighter-rouge">(5)</code>. Now that we know which piece we are currently trying to export, we create a selection of that specific piece <code class="highlighter-rouge">(6)</code>. We remember the current state of the document <code class="highlighter-rouge">(7)</code>, crop the piece <code class="highlighter-rouge">(8)</code> and save it to the correct location <code class="highlighter-rouge">(9)</code>. We save using the function we have used in other scripts before <code class="highlighter-rouge">(1)</code>. Last but not least we restore the state to before the crop happend and do <code class="highlighter-rouge">(6 - 10)</code> over again until all pieces are exported.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Photoshop Script: save image in pieces&amp;url=http://jokevanoijen.be/snippets/photoshop/2017/10/11/ps-script-save-image-pieces.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://jokevanoijen.be/snippets/photoshop/2017/10/11/ps-script-save-image-pieces.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://jokevanoijen.be/snippets/photoshop/2017/10/11/ps-script-save-image-pieces.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() {
+            var dsq = document.createElement('script'); 
+            dsq.type = 'text/javascript'; 
+            dsq.async = true;
+            dsq.src = '//jokevanoijen-1.disqus.com/embed.js';
+            document.body.appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">JokevO</a> &copy; 
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+         as a base.
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33524716-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+</body>
+</html>

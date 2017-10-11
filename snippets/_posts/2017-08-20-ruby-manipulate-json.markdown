@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ruby: manipulate json"
-date:   2017-08-10 06:30:00
+date:   2017-08-20 06:30:00
 categories: json ruby
 ---
 

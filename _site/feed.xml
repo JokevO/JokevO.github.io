@@ -5,12 +5,62 @@
     <description>I like programming</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Oct 2017 22:08:09 +0200</pubDate>
-    <lastBuildDate>Wed, 11 Oct 2017 22:08:09 +0200</lastBuildDate>
+    <pubDate>Wed, 18 Oct 2017 21:07:39 +0200</pubDate>
+    <lastBuildDate>Wed, 18 Oct 2017 21:07:39 +0200</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title>Photoshop Script: save image in pieces</title>
+        <title>Photoshop script: scripting listener</title>
+        <description>&lt;p&gt;When you are scripting in photoshop, you will notice not all operations you use in photoshop are found in the &lt;a href=&quot;http://www.adobe.com/content/dam/acom/en/devnet/photoshop/pdfs/photoshop-cc-javascript-ref-2015.pdf&quot;&gt;scripting reference&lt;/a&gt;. These operations can be used through the action manager (if the action is recordable).&lt;/p&gt;
+
+&lt;p&gt;To help you with the actions, you can install a plugin called &lt;a href=&quot;https://helpx.adobe.com/photoshop/kb/downloadable-plugins-and-content.html#ScriptingListenerplugin&quot;&gt;ScriptingListener&lt;/a&gt;. This plugin will record every action you do in photoshop and output them in two txt files. These files will be saved on your desktop and are called &lt;code class=&quot;highlighter-rouge&quot;&gt;ScriptingListenerJS.log&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ScriptingListenerVB.log&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;ScriptingListenerJS.log&lt;/code&gt; contains all recorded actions translated to javascript. &lt;code class=&quot;highlighter-rouge&quot;&gt;ScriptingListenerVB.log&lt;/code&gt; contains the same but translated to visual basic script.&lt;/p&gt;
+
+&lt;p&gt;Every action in these files are seperated by &lt;code class=&quot;highlighter-rouge&quot;&gt;// ============&lt;/code&gt;. When you do a selection by color range for example, this action can be found in &lt;code class=&quot;highlighter-rouge&quot;&gt;ScriptingListenerJS.log&lt;/code&gt; and looks like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idClrR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ClrR&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;desc69&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ActionDescriptor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idFzns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Fzns&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;desc69&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idFzns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idMnm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mnm &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;desc70&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ActionDescriptor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLmnc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Lmnc&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;desc70&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLmnc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;51.330000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;A   &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;desc70&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.330000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B   &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;desc70&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;61.690000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLbCl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;LbCl&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;desc69&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idMnm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLbCl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;desc70&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idMxm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mxm &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;desc71&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ActionDescriptor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLmnc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Lmnc&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;desc71&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLmnc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;51.330000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;A   &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;desc71&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.330000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idB&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;B   &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;desc71&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putDouble&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;61.690000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLbCl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;charIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;LbCl&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;desc69&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idMxm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idLbCl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;desc71&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idcolorModel&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;stringIDToTypeID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;colorModel&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;desc69&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idcolorModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;executeAction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;idClrR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;desc69&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;DialogModes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;NO&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You can then use this code directly in your other photoshop js scripts.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 18 Oct 2017 08:30:00 +0200</pubDate>
+        <link>http://localhost:4000//snippets/photoshop/2017/10/18/ps-script-scripting-listener.html</link>
+        <guid isPermaLink="true">http://localhost:4000//snippets/photoshop/2017/10/18/ps-script-scripting-listener.html</guid>
+        
+        
+        <category>snippets</category>
+        
+        <category>photoshop</category>
+        
+      </item>
+    
+      <item>
+        <title>Photoshop script: save image in pieces</title>
         <description>&lt;p&gt;For my personal project, I started with a map of the world in photoshop. This map was 16384x8192. I exported the map at about half the scale to use in unreal. When I wanted to build the project on my phone, I bumped into an issue with it. My phone could only load images that were maximum 2048x2048px.&lt;/p&gt;
 
 &lt;p&gt;To export the map at 2048x2048 would lose too much of the detail. What I did instead, I split up the map (and globe to put the map on) in eight pieces. Now I do iterate on the map quite a lot and it would be a hassle to actually keep seperate photshop files for every piece of the map.&lt;/p&gt;
@@ -56,8 +106,8 @@
 &lt;p&gt;To start, we get the current height and width of the document &lt;code class=&quot;highlighter-rouge&quot;&gt;(2)&lt;/code&gt;. Depending on how many pieces, we calculate the width and height of each piece &lt;code class=&quot;highlighter-rouge&quot;&gt;(3)&lt;/code&gt;. After that, we loop over all the horizontal pieces we will create &lt;code class=&quot;highlighter-rouge&quot;&gt;(4)&lt;/code&gt;, and immediatly go over the vertical ones &lt;code class=&quot;highlighter-rouge&quot;&gt;(5)&lt;/code&gt;. Now that we know which piece we are currently trying to export, we create a selection of that specific piece &lt;code class=&quot;highlighter-rouge&quot;&gt;(6)&lt;/code&gt;. We remember the current state of the document &lt;code class=&quot;highlighter-rouge&quot;&gt;(7)&lt;/code&gt;, crop the piece &lt;code class=&quot;highlighter-rouge&quot;&gt;(8)&lt;/code&gt; and save it to the correct location &lt;code class=&quot;highlighter-rouge&quot;&gt;(9)&lt;/code&gt;. We save using the function we have used in other scripts before &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt;. Last but not least we restore the state to before the crop happend and do &lt;code class=&quot;highlighter-rouge&quot;&gt;(6 - 10)&lt;/code&gt; over again until all pieces are exported.&lt;/p&gt;
 </description>
         <pubDate>Wed, 11 Oct 2017 08:30:00 +0200</pubDate>
-        <link>http://localhost:4000//snippets/photoshop/2017/10/11/ps-script-save-image-pieces.html</link>
-        <guid isPermaLink="true">http://localhost:4000//snippets/photoshop/2017/10/11/ps-script-save-image-pieces.html</guid>
+        <link>http://localhost:4000//snippets/photoshop/2017/10/11/ps-script-save-image-pieces-Copy.html</link>
+        <guid isPermaLink="true">http://localhost:4000//snippets/photoshop/2017/10/11/ps-script-save-image-pieces-Copy.html</guid>
         
         
         <category>snippets</category>
@@ -439,35 +489,6 @@ jsonlint &lt;span class=&quot;nv&quot;&gt;$JSON_TO_VALIDATE_PATH&lt;/span&gt;
         <category>npm</category>
         
         <category>bash</category>
-        
-      </item>
-    
-      <item>
-        <title>Blender script: How to change the object data name to the object name</title>
-        <description>&lt;p&gt;If you rename an object in blender, you likely didn’t change the name of the object data.
-There is a difference in the name of the object itself, and the name of the object data.
-When you rename one, the other isn’t automatically renamed.&lt;/p&gt;
-
-&lt;p&gt;When you export your object to a &lt;code class=&quot;highlighter-rouge&quot;&gt;.obj&lt;/code&gt; and the object has different names, it will put these names together during export. For instance, your object is named &lt;code class=&quot;highlighter-rouge&quot;&gt;Floor&lt;/code&gt;, and the object data name is &lt;code class=&quot;highlighter-rouge&quot;&gt;Plane&lt;/code&gt;.
-When the object is exported, the mesh will have the name &lt;code class=&quot;highlighter-rouge&quot;&gt;FloorPlane&lt;/code&gt;. If both names are equal, it will not duplicate the names. For example; the object name and data name are both &lt;code class=&quot;highlighter-rouge&quot;&gt;Floor&lt;/code&gt;, the exported name will be &lt;code class=&quot;highlighter-rouge&quot;&gt;Floor&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Since I don’t want to manually go over every object, I use this very small script that will change all the names to match the object name:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bpy&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#1&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will loop over all the objects &lt;code class=&quot;highlighter-rouge&quot;&gt;(1)&lt;/code&gt; in the scene and rename the data name to the object name &lt;code class=&quot;highlighter-rouge&quot;&gt;(2)&lt;/code&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 15 Aug 2016 12:18:00 +0200</pubDate>
-        <link>http://localhost:4000//snippets/blender/2016/08/15/blender-datanames.html</link>
-        <guid isPermaLink="true">http://localhost:4000//snippets/blender/2016/08/15/blender-datanames.html</guid>
-        
-        
-        <category>snippets</category>
-        
-        <category>blender</category>
         
       </item>
     

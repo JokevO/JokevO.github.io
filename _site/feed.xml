@@ -5,9 +5,9 @@
     <description>I like programming</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Oct 2017 21:07:39 +0200</pubDate>
-    <lastBuildDate>Wed, 18 Oct 2017 21:07:39 +0200</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
+    <pubDate>Thu, 05 Jul 2018 00:24:16 +0200</pubDate>
+    <lastBuildDate>Thu, 05 Jul 2018 00:24:16 +0200</lastBuildDate>
+    <generator>Jekyll v3.8.3</generator>
     
       <item>
         <title>Photoshop script: scripting listener</title>
@@ -466,7 +466,7 @@ You can either install it with &lt;code class=&quot;highlighter-rouge&quot;&gt;n
 jsonlint &lt;span class=&quot;nv&quot;&gt;$JSON_TO_VALIDATE_PATH&lt;/span&gt;
 
 &lt;span class=&quot;c&quot;&gt;#Check if json is valid&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; !&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;then
     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;JSON NOT VALID
     &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1

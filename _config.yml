@@ -8,12 +8,12 @@ markdown: kramdown
 logo: false
 paginate: 15
 baseurl: /
-domain_name: 'http://jokevanoijen.be'
+domain_name: 'http://jokevo.com'
 google_analytics: 'UA-33524716-3'
 gems: [jekyll-paginate]
 
 # Details for the RSS feed generator
-url:            'jokevanoijen.be'
+url:            'jokevo.com'
 
 collections:
   - portfolio

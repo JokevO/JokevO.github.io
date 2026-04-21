@@ -1,0 +1,75 @@
+{{ define "main" }}
+
+<article>
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      {{ partial "categories.html" . }}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{/* ---- Related / recent posts ---- */}}
+  {{ $current := . }}
+  {{ $currentCats := .Params.categories }}
+
+  {{/* Collect related posts (same category, not current) */}}
+  {{ $related := slice }}
+  {{ $hasRelated := false }}
+  {{ if $currentCats }}
+    {{ range .Site.RegularPages.ByDate.Reverse }}
+      {{ if and (ne .Permalink $current.Permalink) (lt (len $related) 3) }}
+        {{ $otherCats := .Params.categories }}
+        {{ $match := false }}
+        {{ range $currentCats }}
+          {{ $cat := . }}
+          {{ range $otherCats }}
+            {{ if eq . $cat }}{{ $match = true }}{{ end }}
+          {{ end }}
+        {{ end }}
+        {{ if $match }}
+          {{ $related = $related | append . }}
+          {{ $hasRelated = true }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Fill remaining slots with recent posts if not enough related */}}
+  {{ if lt (len $related) 3 }}
+    {{ range .Site.RegularPages.ByDate.Reverse }}
+      {{ if and (ne .Permalink $current.Permalink) (lt (len $related) 3) }}
+        {{ $alreadyIn := false }}
+        {{ range $related }}
+          {{ if eq .Permalink $.Permalink }}{{ $alreadyIn = true }}{{ end }}
+        {{ end }}
+        {{ if not $alreadyIn }}
+          {{ $related = $related | append . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $related }}
+  <aside class="post-related">
+    <p class="post-related-label">
+      {{ if $hasRelated }}related{{ else }}previous{{ end }}
+    </p>
+    <div class="post-related-grid">
+      {{ range $related }}
+      <a class="post-related-card" href="{{ .Permalink }}">
+        <span class="post-related-card-title">{{ .Title }}</span>
+        <time class="post-related-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      </a>
+      {{ end }}
+    </div>
+  </aside>
+  {{ end }}
+
+</article>
+
+{{ end }}

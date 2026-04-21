@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<div class="post-list">
+  {{ range .Paginator.Pages.ByDate.Reverse }}
+  <article class="post-item">
+    <header class="post-item-header">
+      <h2 class="post-item-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h2>
+    </header>
+    <p class="post-item-excerpt">
+      {{ .Summary | plainify | truncate 160 }} <a class="read-more" href="{{ .Permalink }}">read more →</a>
+    </p>
+    <div class="post-item-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>
+      {{ partial "categories.html" . }}
+    </div>
+  </article>
+  {{ end }}
+</div>
+
+{{ partial "pagination.html" . }}
+
+{{ end }}

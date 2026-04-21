@@ -1,0 +1,23 @@
+baseURL = "https://jokevo.github.io/"
+languageCode = "en-us"
+title = "JokevO"
+[pagination]
+  pagerSize = 15
+enableRobotsTXT = true
+copyright = "JokevO"
+
+[params]
+  description = "I like programming"
+  metaDescription = "Blog"
+  author = "JokevO"
+  domainName = "https://jokevo.github.io"
+  bluesky = "https://bsky.app/profile/jokevo.com"
+  linkedin = "https://www.linkedin.com/in/joke-van-oijen"
+  github = "https://github.com/JokevO"
+  website = "https://www.flowmechanic.com"
+
+disableKinds = ["taxonomy", "term"]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"

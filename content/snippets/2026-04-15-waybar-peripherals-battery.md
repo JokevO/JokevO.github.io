@@ -1,8 +1,7 @@
 ---
-layout: post
-title: "Waybar peripheral battery label"
-date: 2026-04-15
-tags: [linux, wayland, waybar]
+title: "Waybar: peripheral battery label"
+date: 2026-04-15T08:30:00Z
+categories: [linux, wayland, waybar]
 ---
 
 In my Wayland setup I wanted a small label in Waybar that shows the battery level of my peripherals (mouse, headset, …). It should:
